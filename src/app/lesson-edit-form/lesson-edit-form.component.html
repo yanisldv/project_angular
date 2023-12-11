@@ -1,0 +1,56 @@
+<form [formGroup]="lessonForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label class="col-md-1" for="title"
+ [class]="lessonForm.get('title')?.invalid ? 'text-danger' : ''"
+ >Title</label>
+
+    <input id="titleField" type="text" class="form-control" formControlName="title" placeholder="Enter title">
+    
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1" for="description"
+ [class]="lessonForm.get('description')?.invalid ? 'text-danger' : ''"
+ >Description</label>
+    <textarea id="descriptionField" class="form-control" formControlName="description" rows="3" placeholder="Enter description"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1" for="category"
+ [class]="lessonForm.get('category')?.invalid ? 'text-danger' : ''"
+ >Category</label>
+    <input id="categoryField" type="text" class="form-control" formControlName="category" placeholder="Enter category">
+  </div>
+
+  <div class="form-group">
+    <label for="levelField" ngbTooltip="Enter value between 1(basics) to 10(advanced)" for="level"
+    [class]="lessonForm.get('level')?.invalid ? 'text-danger' : ''">Level</label>
+    <input id="levelField" type="text" class="form-control" formControlName="level" placeholder="Enter level" min="1" max="10">
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1" for="prerequisite"
+    [class]="lessonForm.get('prerequisite')?.invalid ? 'text-danger' : ''"
+    >Prerequisite</label>
+    <input id="prerequisiteField" type="text" class="form-control" formControlName="prerequisite" placeholder="Enter prerequisite">
+  </div>
+
+  <div class="form-group">
+    <label for="tagsField" ngbTooltip="Enter tags, separated by commas" for="tags"
+    [class]="lessonForm.get('tags')?.invalid ? 'text-danger' : ''">Tags</label>
+    <input id="tagsField" type="text" class="form-control" formControlName="tags" placeholder="Enter tags">
+  </div>
+
+  <div class="form-group">
+    <label for="copyright"
+    [class]="lessonForm.get('copyright')?.invalid ? 'text-danger' : ''">Copyright</label>
+    <input id="copyrightField" type="text" class="form-control" formControlName="copyright" placeholder="Enter copyright">
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="onSubmit()"
+ [disabled]="!lessonForm.valid"
+ >Submit</button>
+ <span *ngIf="lessonForm.invalid" class="col-md-8 text-danger">
+  Please fill out all required fields.
+  </span>
+</form>

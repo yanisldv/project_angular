@@ -1,0 +1,77 @@
+<div class="container mt-4">
+    <h2>Search Lessons</h2>
+
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" placeholder="Enter title...">
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" placeholder="Enter description...">
+    </div>
+
+    <!-- Add similar form elements for category, level, tags, author, lastModifiedDate -->
+
+    <!-- Numeric Value Search Field with Min-Max Range -->
+    <div class="form-group">
+        <label for="numericValue">Numeric Value</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <select class="custom-select">
+                    <option value="equals">=</option>
+                    <option value="greaterThan">></option>
+                    <option value="lessThan"><</option>
+                </select>
+            </div>
+            <input type="number" class="form-control" id="numericValueMin">
+            <div class="input-group-prepend input-group-append">
+                <span class="input-group-text">to</span>
+            </div>
+            <input type="number" class="form-control" id="numericValueMax">
+        </div>
+    </div>
+
+    <!-- Date Value Search Field with Start-End Date Range -->
+    <div class="form-group">
+        <label for="dateValue">Date Value</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <select class="custom-select">
+                    <option value="equals">=</option>
+                    <option value="greaterThan">></option>
+                    <option value="lessThan"><</option>
+                </select>
+            </div>
+            <input type="date" class="form-control" id="dateValueStart">
+            <div class="input-group-prepend input-group-append">
+                <span class="input-group-text">to</span>
+            </div>
+            <input type="date" class="form-control" id="dateValueEnd">
+        </div>
+    </div>
+
+    <!-- String Value Search Field with Operator Selection -->
+    <div class="form-group">
+        <label for="stringValue">String Value</label>
+        <div class="input-group">
+            <select class="custom-select">
+                <option value="containsIgnoreCase">Contains (Ignore Case)</option>
+                <option value="like">Like</option>
+                <option value="caseInsensitiveLike">Case-Insensitive Like</option>
+                <option value="startsWith">Starts With</option>
+                <option value="exact">Exact</option>
+            </select>
+            <input type="text" class="form-control" id="stringValue">
+        </div>
+    </div>
+
+    <!-- Toggle for Advanced Search Mode -->
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="advancedSearch">
+        <label class="form-check-label" for="advancedSearch">Advanced Search Mode</label>
+    </div>
+
+    <button type="button" class="btn btn-primary mt-3">Search</button>
+</div>
+
